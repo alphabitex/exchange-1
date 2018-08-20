@@ -48,8 +48,20 @@
 
     <properties>
         <jdk.version>1.8</jdk.version>
+        <lombok.version>1.16.18</lombok.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
     </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
