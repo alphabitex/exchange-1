@@ -1,0 +1,25 @@
+eureka:
+  instance:
+    hostname: exchange-registry
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@exchange-registry:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+zuul:
+  routes:
+    exchange-admin:
+      path: /admin/**
+      serviceId: exchange-admin
+    exchange-market:
+      path: /market/**
+      serviceId: exchange-market
+    exchange-match-engine:
+      path: /exchange/**
+      serviceId: exchange-match-engine
+    exchange-user-center:
+      path: /uc/**
+      serviceId: exchange-user-center

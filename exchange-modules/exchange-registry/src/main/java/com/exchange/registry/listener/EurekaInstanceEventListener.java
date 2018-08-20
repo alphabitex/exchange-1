@@ -34,8 +34,8 @@ public class EurekaInstanceEventListener implements ApplicationListener {
             applications.getRegisteredApplications().forEach(registeredApplication -> {
                 registeredApplication.getInstances().forEach(instanceInfo -> {
                     if (instanceInfo.getInstanceId().equals(event.getServerId())) {
-                        log.error("服务" + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ")挂掉啦");
-                        //todo 消息通知
+                        log.error("service " + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ") down");
+                        //todo notify to someone
                     }
                 });
             });
@@ -45,23 +45,23 @@ public class EurekaInstanceEventListener implements ApplicationListener {
         if (applicationEvent instanceof EurekaInstanceRegisteredEvent) {
             EurekaInstanceRegisteredEvent event = (EurekaInstanceRegisteredEvent) applicationEvent;
             InstanceInfo instanceInfo = event.getInstanceInfo();
-            log.info("服务" + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ")注册成功了！");
+            log.info("service " + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ") Registered successfully！");
         }
 
         //服务续约
         if (applicationEvent instanceof EurekaInstanceRenewedEvent) {
             InstanceInfo instanceInfo = ((EurekaInstanceRenewedEvent) applicationEvent).getInstanceInfo();
-            log.trace("服务" + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ")续约成功！");
+            log.trace("service " + instanceInfo.getAppName() + "(" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + ") Renewed successfully！");
         }
 
         //服务可用
         if (applicationEvent instanceof EurekaRegistryAvailableEvent) {
-            log.info("服务 available");
+            log.info("service available");
         }
 
         //启动服务
         if (applicationEvent instanceof EurekaServerStartedEvent) {
-            log.info("服务 started");
+            log.info("service started");
         }
     }
 }
