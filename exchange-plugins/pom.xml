@@ -12,8 +12,8 @@
     <artifactId>exchange-plugins</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>exchange-web-base</module>
-        <module>exchange-web-mybatis</module>
+        <module>exchange-base</module>
+        <module>exchange-mybatis</module>
     </modules>
 
 

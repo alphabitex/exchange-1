@@ -11,7 +11,7 @@
     <modules>
         <module>exchange-common</module>
         <module>exchange-modules</module>
-        <module>exchange-service</module>
+        <module>exchange-web</module>
         <module>exchange-plugins</module>
     </modules>
 
