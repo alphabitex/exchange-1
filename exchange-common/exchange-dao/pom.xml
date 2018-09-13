@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>exchange-common-entity</artifactId>
+    <artifactId>exchange-dao</artifactId>
 
 
 </project>

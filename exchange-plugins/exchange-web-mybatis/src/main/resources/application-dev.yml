@@ -1,0 +1,10 @@
+#注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: exchange-registry
+  client:
+    service-url:
+      defaultZone: http://root:root@exchange-registry:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
