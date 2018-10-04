@@ -12,7 +12,7 @@
     <artifactId>exchange-plugins</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>exchange-base</module>
+        <module>exchange-web-base</module>
         <module>exchange-mybatis</module>
     </modules>
 
