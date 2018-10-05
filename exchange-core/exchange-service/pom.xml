@@ -14,5 +14,29 @@
 
     <artifactId>exchange-service</artifactId>
 
+    <dependencies>
 
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-dao</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-entity</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
+
+    </dependencies>
 </project>
