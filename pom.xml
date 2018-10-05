@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>exchange-common</module>
+        <module>exchange-core</module>
         <module>exchange-modules</module>
         <module>exchange-web</module>
         <module>exchange-plugins</module>
