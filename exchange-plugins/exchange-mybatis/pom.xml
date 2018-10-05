@@ -18,6 +18,12 @@
 
         <dependency>
             <groupId>com.liberty</groupId>
+            <artifactId>exchange-web-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liberty</groupId>
             <artifactId>exchange-entity</artifactId>
             <version>1.0</version>
         </dependency>

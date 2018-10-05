@@ -10,3 +10,19 @@ wallet:
 #web3j配置
 web3j:
   endpoint: https://ropsten.infura.io/YKZGQG2QTBx0tiWoB2IF
+
+spring:
+  datasource:
+    druid:
+      # 主库数据源
+      master:
+        url: jdbc:mysql://exchange-mysql:3306/exchange-wallet?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      # 从库数据源
+      slave:
+        # 从数据源开关/默认关闭
+        enabled: false
+        url:
+        username:
+        password:
