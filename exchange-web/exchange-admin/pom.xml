@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-admin</name>
+    <description>后台管理模块</description>
+
     <artifactId>exchange-admin</artifactId>
 
 

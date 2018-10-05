@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-web</name>
+    <description>web服务</description>
+
     <artifactId>exchange-web</artifactId>
     <packaging>pom</packaging>
     <modules>

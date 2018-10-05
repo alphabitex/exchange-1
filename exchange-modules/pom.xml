@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-modules</name>
+    <description>通用组件模块</description>
+
     <artifactId>exchange-modules</artifactId>
     <packaging>pom</packaging>
     <modules>

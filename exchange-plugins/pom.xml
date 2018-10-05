@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-plugins</name>
+    <description>组件</description>
+
     <artifactId>exchange-plugins</artifactId>
     <packaging>pom</packaging>
     <modules>

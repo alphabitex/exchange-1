@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-config</name>
+    <description>配置中心</description>
+
     <artifactId>exchange-config</artifactId>
 
 

@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-monitor</name>
+    <description>监控模块</description>
+
     <artifactId>exchange-monitor</artifactId>
 
 

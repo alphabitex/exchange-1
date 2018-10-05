@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-match-engine</name>
+    <description>撮合引擎</description>
+
     <artifactId>exchange-match-engine</artifactId>
 
 

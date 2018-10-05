@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-gateway</name>
+    <description>网关服务</description>
+
     <artifactId>exchange-gateway</artifactId>
 
     <dependencies>

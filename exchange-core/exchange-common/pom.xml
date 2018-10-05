@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>exchange-common</name>
+    <description>通用模块</description>
+
     <artifactId>exchange-common</artifactId>
 
 

@@ -9,17 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>exchange-core</name>
-    <description>核心模块</description>
+    <name>exchange-wallet</name>
+    <description>钱包服务</description>
 
-    <artifactId>exchange-core</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>exchange-entity</module>
-        <module>exchange-service</module>
-        <module>exchange-dao</module>
-        <module>exchange-common</module>
-    </modules>
+    <artifactId>exchange-wallet</artifactId>
 
 
 </project>
