@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
+import com.liberty.exchange.common.constant.RedisValues;
 import com.liberty.exchange.common.utils.Md5;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -80,14 +81,17 @@ public class RedisConfiguration extends CachingConfigurerSupport {
     }
 
     @Bean
-    CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-        //user信息缓存配置
-        RedisCacheConfiguration userCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofMinutes(30)).disableCachingNullValues().prefixKeysWith("user");
+    CacheManager cacheManager(RedisConnectionFactory connectionFactory, RedisValues redisValues) {
         //product信息缓存配置
-        RedisCacheConfiguration productCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofMinutes(10)).disableCachingNullValues().prefixKeysWith("product");
         Map<String, RedisCacheConfiguration> redisCacheConfigurationMap = new HashMap<>();
-        redisCacheConfigurationMap.put("user", userCacheConfiguration);
-        redisCacheConfigurationMap.put("product", productCacheConfiguration);
+        redisValues.getExpiresMap().keySet().forEach(key -> {
+            RedisCacheConfiguration CacheConfiguration = RedisCacheConfiguration
+                    .defaultCacheConfig()
+                    .entryTtl(Duration.ofSeconds(redisValues.getExpiresMap().get(key)))
+                    .disableCachingNullValues()
+                    .prefixKeysWith("REDIS_KEY:");
+            redisCacheConfigurationMap.put(key, CacheConfiguration);
+        });
         //初始化一个RedisCacheWriter
         RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(connectionFactory);
         RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig();
