@@ -72,6 +72,7 @@ spring:
 logging:
   level:
     org.springfromework.web: info
+    com.liberty.exchange.mapper: debug
 
 mybatis:
   mapper-locations: classpath:mapper/**/*Mapper.xml

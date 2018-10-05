@@ -1,5 +1,6 @@
 package com.liberty.exchange.entity.dto.wallet;
 
+import com.liberty.exchange.entity.pojo.wallet.ExchangeMockCoin;
 import lombok.*;
 
 import java.io.Serializable;
@@ -25,4 +26,12 @@ public class CoinInfoDto implements Serializable {
     private Integer unit;  //精度
     private String contractAddress;
     private BigDecimal minCollectAmount; //汇总最低金额
+
+    public CoinInfoDto(ExchangeMockCoin exchangeMockCoin) {
+        this.coinName = exchangeMockCoin.getCoinName();
+        this.fee = exchangeMockCoin.getFee();
+        this.contractAddress = exchangeMockCoin.getContractAddress();
+        this.unit = exchangeMockCoin.getUnit();
+        this.minCollectAmount = exchangeMockCoin.getMinCollectAmount();
+    }
 }

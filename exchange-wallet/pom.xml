@@ -14,6 +14,7 @@
     <description>钱包服务</description>
     <modules>
         <module>exchange-wallet-common</module>
+        <module>exchange-wallet-eth</module>
     </modules>
 
     <artifactId>exchange-wallet</artifactId>

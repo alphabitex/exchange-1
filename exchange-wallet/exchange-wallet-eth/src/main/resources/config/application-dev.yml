@@ -1,0 +1,12 @@
+#钱包相关配置选项
+wallet:
+  coin-name: ETH
+  block-slot: 1
+  block-scan-fixed-delay: 10000  #ms
+  recharge-all:
+    need: true  #默认不需要汇总
+    need-recharge-fee: true #默认不需要打邮费
+
+#web3j配置
+web3j:
+  endpoint: https://ropsten.infura.io/YKZGQG2QTBx0tiWoB2IF

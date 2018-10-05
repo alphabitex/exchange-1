@@ -15,7 +15,31 @@
     <artifactId>exchange-mybatis</artifactId>
 
     <dependencies>
-        
+
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-entity</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-constant</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-mapper</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liberty</groupId>
+            <artifactId>exchange-service</artifactId>
+            <version>1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>com.liberty</groupId>
             <artifactId>exchange-common</artifactId>
