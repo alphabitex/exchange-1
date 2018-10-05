@@ -18,7 +18,7 @@
 
         <dependency>
             <groupId>com.liberty</groupId>
-            <artifactId>exchange-dao</artifactId>
+            <artifactId>exchange-mapper</artifactId>
             <version>1.0</version>
         </dependency>
 

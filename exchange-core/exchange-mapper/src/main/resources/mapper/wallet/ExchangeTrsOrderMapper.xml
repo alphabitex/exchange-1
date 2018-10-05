@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.liberty.exchange.mapper.wallet.ExchangeTrsOrderMapper">
+
+    <select id="selectByHashAndToAddress" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeTrsOrder">
+        SELECT * FROM exchange_trs_order WHERE hash =#{hash} AND to_address =#{toAddress}
+    </select>
+
+    <select id="selectByHashAndCoinType" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeTrsOrder">
+        SELECT * FROM exchange_trs_order WHERE hash =#{hash} AND coin_type =#{coinType}
+    </select>
+
+    <update id="updateOrderStatusById" parameterType="long">
+        UPDATE exchange_trs_order SET status = 2,updated_time=NOW() WHERE id=#{id} AND status = 1
+    </update>
+
+    <select id="selectPendingTrs" resultType="com.liberty.exchange.entity.dto.wallet.CachePendingTrsDto">
+        select hash,to_address from exchange_trs_order where coin_type=#{coinType} and status=#{status}
+    </select>
+</mapper>

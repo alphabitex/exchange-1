@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * User: liulinhui
  * Date: 2018/10/6
  * Time: 3:43
- * Description: RouterLimit
+ * Description: 限流注解
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

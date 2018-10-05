@@ -1,6 +1,6 @@
 package com.liberty.exchange.common.annotation;
 
-import com.liberty.exchange.entity.enums.db.DataSourceType;
+import com.liberty.exchange.constant.enums.DataSourceType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

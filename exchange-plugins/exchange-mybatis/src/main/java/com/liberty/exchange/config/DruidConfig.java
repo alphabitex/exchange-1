@@ -1,8 +1,8 @@
 package com.liberty.exchange.config;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
+import com.liberty.exchange.constant.enums.DataSourceType;
 import com.liberty.exchange.datasource.DynamicDataSource;
-import com.liberty.exchange.entity.enums.db.DataSourceType;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -22,7 +22,7 @@ import java.util.Map;
  * Description: DruidConfig
  */
 @Configuration
-@MapperScan("com.liberty.exchange.dao.mapper")
+@MapperScan("com.liberty.exchange.mapper")
 public class DruidConfig {
 
     @Bean

@@ -17,8 +17,9 @@
     <modules>
         <module>exchange-entity</module>
         <module>exchange-service</module>
-        <module>exchange-dao</module>
+        <module>exchange-mapper</module>
         <module>exchange-common</module>
+        <module>exchange-constant</module>
     </modules>
 
 

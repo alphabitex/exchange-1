@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.liberty.exchange.mapper.wallet.ExchangeMockCoinMapper">
+
+    <select id="selectAllByCoinType" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeMockCoin">
+        select * from exchange_mock_coin where coin_type=#{coinType}
+    </select>
+</mapper>

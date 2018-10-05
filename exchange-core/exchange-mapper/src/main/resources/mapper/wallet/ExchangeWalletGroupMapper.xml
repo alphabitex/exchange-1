@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.liberty.exchange.mapper.wallet.ExchangeWalletGroupMapper">
+
+    <select id="selectGroupByGroupType" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeWalletGroup">
+        select *
+        from exchange_wallet_group
+        where
+        group_type=#{type} and coin_name=#{coinName}
+    </select>
+
+    <select id="selectGasGroupByCoinName" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeWalletGroup">
+        select *
+        from exchange_wallet_group
+        where
+        group_type=#{type}
+        and coin_name=#{coinName}
+        and <![CDATA[balance >= #{balance}
+        ]]>
+    </select>
+
+    <select id="selectByGroupTypeAndCoinNameAndCoinType"
+            resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeWalletGroup">
+        SELECT *
+        FROM exchange_wallet_group
+        WHERE group_type=#{groupType}
+        AND coin_name=#{coinName}
+        AND coin_type=#{coinType}
+        AND active=1
+        <if test="address!=null">
+            AND address = #{address}
+        </if>
+        <if test="amount!=null">
+            AND <![CDATA[balance >= #{amount}]]>
+        </if>
+        <if test="fee!=null">
+            AND <![CDATA[main_balance >= #{fee}]]>
+        </if>
+    </select>
+
+    <select id="selectWithdrawGroupForEth" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeWalletGroup">
+        select * from exchange_wallet_group
+        where group_type= 3
+        and active= 1
+        and coin_name='ETH'
+        AND <![CDATA[balance >= #{amount}]]>
+        <if test="from!=null and from!=''">
+            AND <![CDATA[address >= #{from}]]>
+        </if>
+    </select>
+
+    <select id="selectWithdrawGroupForErc20" resultType="com.liberty.exchange.entity.pojo.wallet.ExchangeWalletGroup">
+        select * from exchange_wallet_group
+        where group_type= 3
+        and active= 1
+        and coin_name=#{coinName}
+        AND <![CDATA[balance >= #{amount}]]>
+        AND <![CDATA[main_balance >= #{fee}]]>
+        <if test="from!=null and from!=''">
+            AND <![CDATA[address >= #{from}]]>
+        </if>
+    </select>
+
+    <update id="updateUsdtWalletGroupBalance">
+        UPDATE exchange_wallet_group
+        SET
+        balance = balance-#{balance},
+        main_balance=main_balance-#{fee},
+        updated_at = NOW()
+        WHERE id=#{id}
+        AND <![CDATA[main_balance >= #{fee}]]>
+        AND <![CDATA[balance >= #{balance}]]>
+    </update>
+
+    <update id="updateEthGroupNonce">
+        update exchange_wallet_group
+        set
+        nonce=nonce+1,
+        updated_at=NOW()
+        where
+        coin_type=#{coinType}
+        and address=#{address}
+    </update>
+
+    <update id="updateNonce">
+        update exchange_wallet_group
+        set
+        nonce=#{nonce},
+        updated_at=NOW()
+        where
+        coin_type=#{coinType}
+        and address=#{address}
+    </update>
+
+    <update id="updateWhenMainTransfer">
+        UPDATE exchange_wallet_group
+        SET main_balance = main_balance - #{slot},
+        updated_at=NOW(),
+        balance =
+        IF
+	    ( ( coin_name = #{coinType} ), balance - #{slot}, balance )
+        WHERE
+        address = #{address}
+	    AND coin_type = #{coinType}
+    </update>
+
+    <update id="updateWhenAssetTransfer">
+        UPDATE exchange_wallet_group
+        SET
+        balance=balance-#{slot},
+        updated_at=NOW()
+        WHERE
+        address=#{address} AND coin_name=#{coinName}
+    </update>
+
+
+</mapper>

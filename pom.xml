@@ -37,6 +37,9 @@
         <pagehelper.version>5.0.3</pagehelper.version>
         <druid.version>1.1.10</druid.version>
 
+        <bcprov.version>1.58</bcprov.version>
+        <fastjson.version>1.2.51</fastjson.version>
+
     </properties>
 
     <dependencies>
@@ -141,9 +144,14 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.31</version>
+                <version>${fastjson.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bcprov.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

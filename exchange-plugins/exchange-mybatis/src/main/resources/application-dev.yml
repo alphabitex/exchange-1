@@ -74,7 +74,7 @@ logging:
     org.springfromework.web: info
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/**/*Mapper.xml
   config-location: classpath:mybatis-config.xml
 
 #ratelimit,规则：要是添加了@RouterLimit注解则按照注解规则来，否则按照此处配置，要是全都没有配置默认60s调用100次

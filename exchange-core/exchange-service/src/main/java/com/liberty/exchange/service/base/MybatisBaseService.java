@@ -2,8 +2,8 @@ package com.liberty.exchange.service.base;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.liberty.exchange.entity.pojo.db.Query;
-import com.liberty.exchange.entity.pojo.db.TableData;
+import com.liberty.exchange.entity.dto.db.Query;
+import com.liberty.exchange.entity.dto.db.TableData;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
