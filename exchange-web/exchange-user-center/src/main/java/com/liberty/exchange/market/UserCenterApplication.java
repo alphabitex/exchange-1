@@ -1,4 +1,4 @@
-package com.exchange.uc;
+package com.liberty.exchange.market;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

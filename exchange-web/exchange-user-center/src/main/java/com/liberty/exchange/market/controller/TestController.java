@@ -1,4 +1,4 @@
-package com.exchange.uc.controller;
+package com.liberty.exchange.market.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ public class TestController {
 
     @RequestMapping("index")
     public String index(@RequestParam("param") String param) {
-        log.info("exchange-market get param..... >>>>>" + param);
+        log.info("exchange-user-center get param..... >>>>>" + param);
         return "hello " + param;
     }
 }

@@ -1,4 +1,4 @@
-package com.exchange.uc;
+package com.liberty.exchange.market;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * Time: 0:25
  * Description: MarketApplication
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.liberty.exchange"})
 @EnableEurekaClient
 @EnableDiscoveryClient
 public class MarketApplication {

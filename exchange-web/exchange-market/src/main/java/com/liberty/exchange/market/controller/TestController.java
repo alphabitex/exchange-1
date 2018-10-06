@@ -1,6 +1,8 @@
-package com.exchange.uc.controller;
+package com.liberty.exchange.market.controller;
 
+import com.liberty.exchange.constant.RedisValues;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TestController {
 
+    @Cacheable(value = RedisValues.tenSec)
     @RequestMapping("index")
     public String index(@RequestParam("param") String param) {
-        log.info("exchange-user-center get param..... >>>>>" + param);
+        log.info("exchange-market get param..... >>>>>" + param);
         return "hello " + param;
     }
 }
